@@ -1,0 +1,128 @@
+.hero {
+  display: flex;
+  height: 100vh;
+  width: 100%;
+  overflow: hidden;
+}
+
+.slide {
+  flex: 1;
+  position: relative;
+  overflow: hidden; /* hide scaled edges */
+}
+
+.slide::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  background-image: inherit; /* copy the image from style */
+  transition: transform 0.7s ease-in-out;
+  z-index: 0;
+}
+
+.slide:hover::before {
+  transform: scale(1.05);
+}
+
+.slide1 {
+  margin-right: -50px;
+  z-index: 1;
+}
+
+.slide2 {
+  flex: 1.2;
+  z-index: 3;
+  clip-path: polygon(0 0, 100% 0, 94% 100%, 6% 100%);
+}
+
+.slide3 {
+  margin-left: -50px;
+  z-index: 2;
+}
+
+.content {
+  opacity: 0;
+  position: absolute;
+  bottom: 4%;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+  color: white;
+  z-index: 1; /* ensure content stays on top */
+  transition: opacity 0.7s ease-in-out;
+}
+
+.slide:hover .content {
+  opacity: 1;
+}
+
+.content h2 {
+  font-size: 1.75rem;
+  font-weight: 600;
+}
+
+.content a {
+  font-size: 1.1rem;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+/* CSS */
+.button {
+  border-width: 0;
+  color: #ffffff;
+  cursor: pointer;
+  display: inline-block;
+  letter-spacing: 0;
+  line-height: 1rem;
+  margin: 0;
+  opacity: 1;
+  outline: 0;
+  padding: .75rem 1.5rem;
+  position: relative;
+  transition: opacity 600ms cubic-bezier(.694, 0, 0.335, 1),background-color 600ms cubic-bezier(.694, 0, 0.335, 1),color 600ms cubic-bezier(.694, 0, 0.335, 1) ;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  vertical-align: baseline;
+  white-space: nowrap;
+}
+
+.button:before {
+  animation: opacityFallbackOut .5s step-end forwards;
+  backface-visibility: hidden;
+  background-color: #ebebebb3;
+  clip-path: polygon(-1% 0, 0 0, -25% 100%, -1% 100%);
+  content: "";
+  height: 100%;
+  left: 0;
+  position: absolute;
+  top: 0;
+  transform: translateZ(0);
+  transition: clip-path .5s cubic-bezier(.165, 0.84, 0.44, 1), -webkit-clip-path 1.4s cubic-bezier(.165, 0.84, 0.44, 1);
+  width: 100%;
+}
+
+.button:hover:before {
+  animation: opacityFallbackIn 0s step-start forwards;
+  clip-path: polygon(0 0, 101% 0, 101% 101%, 0 101%);
+}
+
+.button:hover {
+    text-decoration: none;
+    color: #121212;
+}
+
+.button:after {
+  background-color: #FFFFFF;
+}
+
+.button span {
+  z-index: 1;
+  position: relative;
+}
