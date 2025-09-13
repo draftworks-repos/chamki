@@ -52,7 +52,7 @@ const App = () => {
             value={email}
             onChange={(e) => setEmail(e.target.value)}
             placeholder="E-mail"
-            className="flex-grow w-full sm:w-auto px-4 py-3 border border-neutral-400 focus:outline-none focus:ring-1 focus:ring-neutral-500 placeholder-neutral-500 text-neutral-800 font-light bg-transparent transition-colors duration-300 rounded-full"
+            className="flex-grow w-full sm:w-auto px-4 py-[0.6rem] border border-neutral-400 focus:outline-none focus:ring-1 focus:ring-neutral-500 placeholder-neutral-500 text-neutral-800 font-light bg-transparent transition-colors duration-300 rounded-full"
           />
           <InteractiveHoverButton onClick={handleSubscribe}>
             All Products

@@ -7,11 +7,11 @@ import Cursor1 from '@/components/ui/Cursor1';
 
 const categories = [
   { id: 1, name: 'Kurti Collection', type: 'Kurti', image: '/image-3.png', href: '/kurti' },
-  { id: 2, name: 'Saree Collection', type: 'Saree', image: '/image-3.png', href: '/saree' },
-  { id: 3, name: 'Lehenga Collection', type: 'Lehenga', image: '/image-3.png', href: '/lehenga' },
-  { id: 4, name: 'Shirt Collection', type: 'Shirt', image: '/image-3.png', href: '/shirt' },
-  { id: 5, name: 'Jeans Collection', type: 'Jeans', image: '/image-3.png', href: '/jeans' },
-  { id: 6, name: 'Jacket Collection', type: 'Jacket', image: '/image-3.png', href: '/jacket' },
+  { id: 2, name: 'Saree Collection', type: 'Saree', image: '/image-8.png', href: '/saree' },
+  { id: 3, name: 'Lehenga Collection', type: 'Lehenga', image: '/image-5.png', href: '/lehenga' },
+  { id: 4, name: 'Shirt Collection', type: 'Shirt', image: '/image-10.png', href: '/shirt' },
+  { id: 5, name: 'Jeans Collection', type: 'Jeans', image: '/image-7.png', href: '/jeans' },
+  { id: 6, name: 'Jacket Collection', type: 'Jacket', image: '/image-12.png', href: '/jacket' },
 ];
 
 export default function CategoriesGrid() {

@@ -1,0 +1,17 @@
+.heading {
+  max-width: 1250px;
+  margin: 0 auto;
+  text-align: left;
+  font-size: 2rem;
+  font-weight: 400;
+  letter-spacing: 0.05em;
+  color: #262626;
+  margin-bottom: 1.5rem;
+  text-transform: uppercase;
+}
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(100px, 210px)); /* smaller cards */
+  gap: 3rem; /* space between cards */
+  justify-content: center; /* center grid if not filling row */
+}

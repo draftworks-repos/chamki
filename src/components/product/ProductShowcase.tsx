@@ -85,7 +85,7 @@ const products = [
     subtitle: '₹ 1,299',
     contentTitle: 'Lightweight cotton kurti with sleeveless design.',
     contentSubtitle: 'Ideal for summer wear, with subtle embroidery on the neckline.',
-    bottleBg: '/image-3.png',
+    bottleBg: '/image-11.png',
     bottleImg: '#'
   },
   {
@@ -95,7 +95,7 @@ const products = [
     subtitle: '₹ 1,899',
     contentTitle: 'Flared Anarkali style kurti in rayon fabric.',
     contentSubtitle: 'Perfect for festive occasions with rich printed patterns.',
-    bottleBg: '/image-4.png',
+    bottleBg: '/image-9.png',
     bottleImg: '#'
   },
   {
@@ -105,7 +105,7 @@ const products = [
     subtitle: '₹ 2,999',
     contentTitle: 'Traditional pure silk saree with zari border.',
     contentSubtitle: 'Elegant drape suitable for weddings and special occasions.',
-    bottleBg: '/image-3.png',
+    bottleBg: '/image-10.png',
     bottleImg: '#'
   },
   {
@@ -115,7 +115,7 @@ const products = [
     subtitle: '₹ 1,499',
     contentTitle: 'Slim-fit cotton formal shirt.',
     contentSubtitle: 'Available in pastel shades, ideal for office & meetings.',
-    bottleBg: '/image-5.png',
+    bottleBg: '/image-8.png',
     bottleImg: '#'
   },
   {
@@ -125,7 +125,7 @@ const products = [
     subtitle: '₹ 2,199',
     contentTitle: 'Stretchable denim jeans with a modern slim fit.',
     contentSubtitle: 'Comfortable for daily wear with durable stitching.',
-    bottleBg: '/image-6.png',
+    bottleBg: '/image-12.png',
     bottleImg: '#'
   },
   {
@@ -135,7 +135,7 @@ const products = [
     subtitle: '₹ 1,799',
     contentTitle: 'Casual fleece-lined oversized hoodie.',
     contentSubtitle: 'Trendy unisex design, cozy for winters.',
-    bottleBg: '/image-9.png',
+    bottleBg: '/image-5.png',
     bottleImg: '#'
   },
 ];
