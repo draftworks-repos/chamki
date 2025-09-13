@@ -17,7 +17,15 @@ export default function Hero() {
         >
           <div className={styles.content}>
             <h2>{slide.title}</h2>
-            <a href="#" className={styles.button}><span className={styles.text}>{slide.link}</span></a>
+            <a href="#" className={styles.button}>
+              <span className={styles.text}>{slide.link}
+              <img
+                src="/arrow-up-right.svg"
+                alt="Arrow up right"
+                className={styles.arrow}
+              />
+              </span>
+            </a>
           </div>
         </div>
       ))}

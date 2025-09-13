@@ -1,0 +1,116 @@
+[
+  {
+    "id": "1",
+    "title": "Classic Cotton Kurti",
+    "image": "/images/products/kurti-classic.jpg",
+    "color": "Sky Blue",
+    "colorCode": "#87CEEB",
+    "sizes": ["S", "M", "L", "XL", "2XL"],
+    "price": 1499,
+    "currency": "INR",
+    "description": "A lightweight and breathable cotton kurti perfect for everyday wear.",
+    "category": "Kurtis",
+    "details": {
+      "clothType": "Kurti",
+      "fabric": "100% Cotton",
+      "pattern": "Solid",
+      "design": "Straight Cut with Round Neck"
+    },
+    "createdAt": "2025-09-12T13:50:00Z"
+  },
+  {
+    "id": "2",
+    "title": "Embroidered Anarkali Suit",
+    "image": "/images/products/anarkali-embroidered.jpg",
+    "color": "Maroon",
+    "colorCode": "#800000",
+    "sizes": ["M", "L", "XL", "2XL"],
+    "price": 3299,
+    "currency": "INR",
+    "description": "A stunning embroidered Anarkali suit with intricate floral patterns.",
+    "category": "Suits",
+    "details": {
+      "clothType": "Anarkali Suit",
+      "fabric": "Georgette Blend",
+      "pattern": "Embroidered",
+      "design": "Floor Length, Full Sleeves"
+    },
+    "createdAt": "2025-09-10T08:30:00Z"
+  },
+  {
+    "id": "3",
+    "title": "Floral Print Saree",
+    "image": "/images/products/saree-floral.jpg",
+    "color": "Peach",
+    "colorCode": "#FFDAB9",
+    "sizes": ["Free Size"],
+    "price": 2499,
+    "currency": "INR",
+    "description": "Elegant peach-colored saree with floral digital prints.",
+    "category": "Sarees",
+    "details": {
+      "clothType": "Saree",
+      "fabric": "Chiffon",
+      "pattern": "Floral Print",
+      "design": "Lightweight, Party Wear"
+    },
+    "createdAt": "2025-09-08T17:05:00Z"
+  },
+  {
+    "id": "4",
+    "title": "Denim Jacket",
+    "image": "/images/products/denim-jacket.jpg",
+    "color": "Dark Blue",
+    "colorCode": "#00008B",
+    "sizes": ["S", "M", "L", "XL"],
+    "price": 1999,
+    "currency": "INR",
+    "description": "Trendy denim jacket with button closure and side pockets.",
+    "category": "Jackets",
+    "details": {
+      "clothType": "Jacket",
+      "fabric": "Denim",
+      "pattern": "Washed",
+      "design": "Collared, Casual Fit"
+    },
+    "createdAt": "2025-09-05T11:20:00Z"
+  },
+  {
+    "id": "5",
+    "title": "Casual Palazzo Pants",
+    "image": "/images/products/palazzo-casual.jpg",
+    "color": "Black",
+    "colorCode": "#000000",
+    "sizes": ["M", "L", "XL", "2XL", "3XL"],
+    "price": 899,
+    "currency": "INR",
+    "description": "Comfortable palazzo pants with elastic waist for all-day wear.",
+    "category": "Bottoms",
+    "details": {
+      "clothType": "Palazzo",
+      "fabric": "Rayon",
+      "pattern": "Solid",
+      "design": "Wide Leg, Relaxed Fit"
+    },
+    "createdAt": "2025-09-02T14:45:00Z"
+  },
+  {
+    "id": "6",
+    "title": "Printed Maxi Dress",
+    "image": "/images/products/maxi-printed.jpg",
+    "color": "Navy Blue",
+    "colorCode": "#000080",
+    "sizes": ["S", "M", "L", "XL"],
+    "price": 1899,
+    "currency": "INR",
+    "description": "Navy maxi dress with all-over boho prints, perfect for casual outings.",
+    "category": "Dresses",
+    "details": {
+      "clothType": "Dress",
+      "fabric": "Viscose",
+      "pattern": "Printed",
+      "design": "Sleeveless, A-Line"
+    },
+    "createdAt": "2025-08-28T09:15:00Z"
+  }
+]

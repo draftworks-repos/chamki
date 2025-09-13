@@ -1,0 +1,44 @@
+.hero {
+  position: relative;
+  text-align: center;
+  overflow: hidden;
+  padding: 3rem 1rem;
+}
+
+.heading {
+  text-align: center;
+  font-size: 2rem;
+  font-weight: 400;
+  letter-spacing: 0.05em; 
+  color: #262626;
+  margin-bottom: 1.5rem;
+  text-transform: uppercase;
+}
+
+.backgroundText {
+  font-size: 20rem;
+  font-weight: 900;
+  color: rgba(0, 0, 0, 0.08); /* light watermark */
+  position: absolute;
+  top: 40%;                /* adjusted so half is above image */
+  left: 50%;
+  transform: translate(-50%, -50%);
+  white-space: nowrap;
+  z-index: 2;              /* now above image */
+  pointer-events: none;
+}
+
+.imageWrapper {
+  position: relative;
+  width: 100%;
+  height: 60vh;
+  overflow: hidden;
+  z-index: 1;              /* image is behind text */
+}
+
+.image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}

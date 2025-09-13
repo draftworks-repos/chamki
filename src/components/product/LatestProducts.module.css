@@ -1,0 +1,115 @@
+.section {
+  padding: 5rem 1rem;
+  text-align: center;
+}
+
+.heading {
+  text-align: center;
+  font-size: 2rem;
+  font-weight: 400;
+  letter-spacing: 0.05em;
+  color: #262626;
+  margin-bottom: 1.5rem;
+  text-transform: uppercase;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 300px)); /* smaller cards */
+  gap: 3rem; /* space between cards */
+  justify-content: center; /* center grid if not filling row */
+}
+
+.card {
+  overflow: hidden;
+  background: #fff;
+  box-shadow: 0 4px 14px rgba(0,0,0,0.08);
+}
+
+.imageWrapper {
+  position: relative;
+  width: 100%;
+  padding-top: 177%; /* 9:16 aspect ratio */
+  overflow: hidden;
+}
+
+
+.image {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: opacity 0.3s ease-in-out;
+  will-change: opacity;
+}
+
+.fadeIn {
+  opacity: 1;
+  z-index: 2;
+}
+
+.fadeOut {
+  opacity: 0;
+  z-index: 1;
+}
+
+
+.info {
+  padding: 1rem;
+  text-align: left;
+}
+
+.title {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #2c3e50;
+  margin-bottom: 0.3rem;
+  cursor: pointer;
+}
+
+.price {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #4a5159a6;
+}
+
+.discount {
+  display: inline-block;
+  font-size: 0.75rem;
+  color: #c87c7cd3;
+  margin-left: 0.4rem;
+  border-radius: 1rem;
+}
+
+.bottomRow{
+  display: flex;
+  justify-content: space-between;
+  align-items: bottom;
+}
+
+.openBtnWrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 27px;
+  height: 27px;
+  border-radius: 50%;
+  border: #4a5159a6 1px solid;
+  cursor: pointer;
+}
+
+.openBtn {
+  color: #4a5159a6;
+  transform: rotate(0deg);
+  transition: all 0.6s ease-in-out;
+}
+
+.openBtnWrapper:hover .openBtn {
+  color: #222;
+  transform: rotate(-30deg);
+}
+
+.openBtnWrapper:hover {
+  color: #222;
+}

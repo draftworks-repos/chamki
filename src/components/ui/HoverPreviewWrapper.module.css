@@ -1,0 +1,26 @@
+.wrapper {
+  position: relative;
+  display: block;
+}
+
+/* Hover preview image */
+.previewImage {
+  position: fixed;
+  width: 120px;
+  height: 120px;
+  object-fit: cover;
+  object-position: center top;
+  pointer-events: none;
+  transition: transform 0.1s ease;
+  z-index: 9999;
+}
+
+/* Custom small cursor */
+.customCursor {
+  position: fixed;
+  width: 30px;           /* make cursor small */
+  height: 30px;
+  pointer-events: none;
+  transform: rotate(-10deg); /* rotate a bit to the left */
+  z-index: 10000;
+}
