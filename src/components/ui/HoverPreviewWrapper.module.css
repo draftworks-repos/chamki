@@ -12,7 +12,7 @@
   object-position: center top;
   pointer-events: none;
   transition: transform 0.1s ease;
-  z-index: 9999;
+  z-index: 10;
 }
 
 /* Custom small cursor */

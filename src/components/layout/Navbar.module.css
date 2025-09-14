@@ -6,24 +6,29 @@
   justify-content: space-between;
   align-items: center;
   padding: 1rem 2rem;
-  transition: background-color 0.3s ease, backdrop-filter 0.3s ease;
-  z-index: 50;
+  transition: all 0.3s ease;
+  z-index: 999;
+  border-bottom: 1px solid transparent;
+  transition: background-color 0.3s ease-in-out, backdrop-filter 0.3s ease, border-color 0.3s ease;
 }
 
 .transparent {
   background-color: transparent;
-  backdrop-filter: none;
+  color: white;
 }
 
 .glassy {
-  background-color: rgba(255, 255, 255, 0.2);
+  background-color: rgba(255, 255, 255, 0.875); /* stronger background */
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
+  color: #262626;
+  border-bottom-color:#e5e7eb;
 }
 
 .logo {
   font-size: 1.5rem;
-  font-weight: bold;
+  font-weight: 500;
+  letter-spacing: 2px;
 }
 
 .navLinks {
@@ -32,14 +37,39 @@
 }
 
 .navLink {
+  position: relative;
   text-decoration: none;
-  color: white;
-  font-weight: 500;
-  transition: color 0.3s ease;
+  font-size: 0.9rem;
+  font-weight: 300;
+  text-transform: Uppercase;
+  letter-spacing: 0.5px;
 }
 
-.navLink:hover {
-  color: #f59e0b; /* amber hover */
+.transparent .navLink,
+.transparent .icon {
+  color: white;
+}
+
+.glassy .navLink,
+.glassy .icon {
+  color: #262626;
+}
+
+/* Underline animation */
+.navLink::after {
+  content: "";
+  position: absolute;
+  bottom: -4px;
+  left: 50%;
+  width: 0%;
+  height: 1px;
+  background-color: currentColor;
+  transition: width 0.3s ease, left 0.3s ease;
+}
+
+.navLink:hover::after {
+  width: 100%;
+  left: 0;
 }
 
 .icons {
@@ -51,10 +81,9 @@
   width: 24px;
   height: 24px;
   cursor: pointer;
-  fill: white;
-  transition: fill 0.3s ease;
+  transition: transform 0.2s ease;
 }
 
 .icon:hover {
-  fill: #f59e0b;
+  transform: scale(1.2);
 }

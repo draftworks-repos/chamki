@@ -54,7 +54,7 @@ export default function Cursor1({ targets }: Cursor1Props) {
               x: springX,
               y: springY,
               pointerEvents: 'none',
-              zIndex: 9999,
+              zIndex: 10,
               translateX: '-50%',
               translateY: '-50%',
             }}

@@ -61,7 +61,7 @@ function ProductCard({ product }: { product: (typeof products)[0] }) {
     <div className={styles.card}>
       {/* Make the image clickable */}
       <Link href={`/product/${product.id}`} className={styles.imageLink}>
-        <HoverPreviewWrapper previewImage={product.hoverImage}>
+        <HoverPreviewWrapper previewImage={product.image}>
           <div
             className={styles.imageWrapper}
             onMouseEnter={() => setHovered(true)}

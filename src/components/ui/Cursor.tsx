@@ -5,10 +5,8 @@ type CursorProps = {
   children: ReactNode;
   attachToParent?: boolean;
   onPositionChange?: (x: number, y: number) => void;
+} & Record<string, unknown>;
 
-  // Accept extra props
-  [key: string]: any;
-};
 
 
 export function Cursor({ children, attachToParent, onPositionChange }: CursorProps) {
