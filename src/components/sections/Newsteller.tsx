@@ -36,7 +36,7 @@ const App = () => {
   };
 
   return (
-    <div className="flex items-center justify-center min-h-[50vh] bg-[#f3f0ec] ">
+    <div className="flex items-center justify-center min-h-[50vh] bg-[#ffffff] ">
       <div className="w-xl text-center">
         <h1 className="text-3xl md:text-4xl font-normal tracking-wider text-neutral-800 mb-6 uppercase">
           Join the Movement
@@ -70,9 +70,3 @@ const App = () => {
 };
 
 export default App;
-
-const container = document.getElementById('root');
-if (container) {
-  const root = createRoot(container);
-  root.render(<App />);
-}

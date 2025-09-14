@@ -5,6 +5,7 @@ import styles from "./LatestProducts.module.css";
 import { InteractiveHoverButton } from "../ui/InterractiveHoverButton";
 import HoverPreviewWrapper from "../ui/HoverPreviewWrapper";
 import { ArrowRight } from "lucide-react";
+import Link from "next/link";
 
 const products = [
   {
@@ -58,25 +59,27 @@ function ProductCard({ product }: { product: (typeof products)[0] }) {
 
   return (
     <div className={styles.card}>
-      {/* Wrap only the image wrapper */}
-      <HoverPreviewWrapper previewImage={product.hoverImage}>
-        <div
-          className={styles.imageWrapper}
-          onMouseEnter={() => setHovered(true)}
-          onMouseLeave={() => setHovered(false)}
-        >
-          <img
-            src={product.image}
-            alt={product.title}
-            className={`${styles.image} ${hovered ? styles.fadeOut : styles.fadeIn}`}
-          />
-          <img
-            src={product.hoverImage}
-            alt={product.title}
-            className={`${styles.image} ${hovered ? styles.fadeIn : styles.fadeOut}`}
-          />
-        </div>
-      </HoverPreviewWrapper>
+      {/* Make the image clickable */}
+      <Link href={`/product/${product.id}`} className={styles.imageLink}>
+        <HoverPreviewWrapper previewImage={product.hoverImage}>
+          <div
+            className={styles.imageWrapper}
+            onMouseEnter={() => setHovered(true)}
+            onMouseLeave={() => setHovered(false)}
+          >
+            <img
+              src={product.image}
+              alt={product.title}
+              className={`${styles.image} ${hovered ? styles.fadeOut : styles.fadeIn}`}
+            />
+            <img
+              src={product.hoverImage}
+              alt={product.title}
+              className={`${styles.image} ${hovered ? styles.fadeIn : styles.fadeOut}`}
+            />
+          </div>
+        </HoverPreviewWrapper>
+      </Link>
 
       {/* Info stays outside */}
       <div className={styles.info}>
@@ -86,9 +89,9 @@ function ProductCard({ product }: { product: (typeof products)[0] }) {
             {product.currency} {product.price}{" "}
             <span className={styles.discount}>-10%</span>
           </p>
-          <a className={styles.openBtnWrapper} href="/product">
+          <Link className={styles.openBtnWrapper} href={`/product/${product.id}`}>
             <ArrowRight className={styles.openBtn} size={18} />
-          </a>
+          </Link>
         </div>
       </div>
     </div>

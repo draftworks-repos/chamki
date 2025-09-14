@@ -188,7 +188,7 @@ const ProductShowcase = () => {
           display: flex;
           flex-direction: column;
           scroll-behavior: smooth;
-          background-color: #e6decf;
+          background-color: #fbf9f7;
           padding: 0 30px;
           overflow-y: auto;
           overflow-x: hidden;
@@ -408,12 +408,12 @@ const ProductShowcase = () => {
           font-weight: 500;
         }
 
-        [data-sld="0"] .container { background-color: white; }
-        [data-sld="1"] .container { background-color: white; }
-        [data-sld="2"] .container { background-color: white; }
-        [data-sld="3"] .container { background-color: white; }
-        [data-sld="4"] .container { background-color: white; }
-        [data-sld="5"] .container { background-color: white; }
+        [data-sld="0"] .container { background-color: #ffffff; }
+        [data-sld="1"] .container { background-color: #ffffff; }
+        [data-sld="2"] .container { background-color: #ffffff; }
+        [data-sld="3"] .container { background-color: #ffffff; }
+        [data-sld="4"] .container { background-color: #ffffff; }
+        [data-sld="5"] .container { background-color: #ffffff; }
 
         @media (max-width: 480px) {
           .body { padding: 0; }
