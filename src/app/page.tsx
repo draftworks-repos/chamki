@@ -13,7 +13,7 @@ export default function HomePage() {
     <>
       <Hero/>
       <div style={{maxWidth: "1440px", margin: "0 auto"}}>
-        <LatestProducts/>
+        {/* <LatestProducts/> */}
       </div>
       <Banner/>
       <div style={{maxWidth: "1440px", margin: "0 auto"}}>
