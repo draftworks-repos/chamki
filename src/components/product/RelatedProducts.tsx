@@ -90,6 +90,7 @@ function ProductCard({ product }: { product: RelatedProduct }) {
     <div className={styles.card}>
         <div
           className={styles.imageWrapper}
+          style={{ paddingTop: "100%" }} // 4:5 aspect ratio
           onMouseEnter={() => setHovered(true)}
           onMouseLeave={() => setHovered(false)}
         >

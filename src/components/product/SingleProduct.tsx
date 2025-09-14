@@ -3,7 +3,6 @@ import React, { useState, useEffect, useRef } from "react";
 import { ChevronLeft, ChevronRight, Share2, Heart, Star } from "lucide-react";
 import Link from "next/link";
 import RelatedProducts from "./RelatedProducts";
-import Tabs from "../ui/Tabs";
 type ColorOption = {
   name: string;
   value: string;
@@ -171,7 +170,7 @@ const SingleProduct = ({ product }: { product: Product }) => {
               <button
                 key={index}
                 onClick={() => setSelectedImageIndex(index)}
-                className={`w-full h-[300px] overflow-hidden border-2 transition-colors ${
+                className={`cursor-pointer w-full h-[300px] overflow-hidden border-2 transition-colors ${
                   selectedImageIndex === index
                     ? "border-black"
                     : "border-gray-200 hover:border-gray-300"
@@ -250,7 +249,7 @@ const SingleProduct = ({ product }: { product: Product }) => {
 
             {/* Color Selection */}
             <div>
-              <h3 className="text-sm font-medium text-gray-900 mb-3">
+              <h3 className="text-[1rem] uppercase font-medium text-gray-900 mb-4">
                 COLOUR: <span className="font-normal">{selectedColor}</span>
               </h3>
               <div className="flex space-x-3">
@@ -277,7 +276,7 @@ const SingleProduct = ({ product }: { product: Product }) => {
             {/* Size Selection */}
             <div>
               <div className="flex items-center justify-between mb-3">
-                <h3 className="text-sm font-medium text-gray-900">
+                <h3 className="text-[1rem] uppercase font-medium text-gray-900">
                   Size: <span className="font-normal">{selectedSize}</span>
                 </h3>
 
