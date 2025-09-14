@@ -6,6 +6,7 @@ import { InteractiveHoverButton } from "../ui/InterractiveHoverButton";
 // import HoverPreviewWrapper from "../ui/HoverPreviewWrapper";
 import { ArrowRight } from "lucide-react";
 import Link from "next/link";
+import AllProductBtn from "../ui/AllProductBtn";
 
 const products = [
   {

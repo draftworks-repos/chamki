@@ -2,12 +2,7 @@ import React, { useState } from "react";
 import { ChevronLeft, ChevronRight, Share2, Heart, Star } from "lucide-react";
 import Link from "next/link";
 import RelatedProducts from "./RelatedProducts";
-import {
-  Accordion,
-  AccordionContent,
-  AccordionItem,
-  AccordionTrigger,
-} from "../ui/Accordion"
+import CheckoutBtn from "../ui/CheckoutBtn";
 
 type ColorOption = {
   name: string;
@@ -274,14 +269,15 @@ const SingleProduct = ({ product }: { product: Product }) => {
 
 
           {/* Action Buttons */}
-          <div className="space-y-3 pt-4">
-            <button className="w-full bg-black text-white py-3 px-6 font-medium hover:bg-gray-800 transition-colors">
+          <div className="space-x-3 flex flex-row pt-4 text-[0.9rem]">
+            <button className="w-full bg-black text-white py-3  font-medium rounded-full cursor-pointer transition-colors duration-200 ease-in-out hover:bg-white hover:text-black border border-black">
               Add To Cart
             </button>
-            <button className="w-full border border-gray-300 text-gray-900 py-3 px-6 font-medium hover:bg-gray-50 transition-colors">
+            <button className="w-full bg-black text-white py-3 font-medium rounded-full cursor-pointer transition-colors duration-200 ease-in-out hover:bg-white hover:text-black border border-black">
               Checkout Now
             </button>
           </div>
+
 
           {/* Delivery Info */}
           <div className="pt-4 border-t border-gray-200">
