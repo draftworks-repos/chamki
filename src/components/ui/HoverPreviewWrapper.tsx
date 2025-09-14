@@ -1,8 +1,7 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useRef, useEffect } from "react";
 import styles from "./HoverPreviewWrapper.module.css";
-
 
 interface HoverPreviewWrapperProps {
   previewImage: string;
@@ -11,11 +10,26 @@ interface HoverPreviewWrapperProps {
 
 export default function HoverPreviewWrapper({ previewImage, children }: HoverPreviewWrapperProps) {
   const [hovered, setHovered] = useState(false);
-  const [cursorPos, setCursorPos] = useState({ x: 0, y: 0 });
+  const [renderPos, setRenderPos] = useState({ x: 0, y: 0 });
+  const cursorPos = useRef({ x: 0, y: 0 });
+  const frame = useRef<number | null>(null); // ✅ fixed
 
   const handleMouseMove = (e: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
-    setCursorPos({ x: e.clientX, y: e.clientY });
+    cursorPos.current = { x: e.clientX, y: e.clientY };
+
+    if (!frame.current) {
+      frame.current = requestAnimationFrame(() => {
+        setRenderPos(cursorPos.current);
+        frame.current = null;
+      });
+    }
   };
+
+  useEffect(() => {
+    return () => {
+      if (frame.current) cancelAnimationFrame(frame.current);
+    };
+  }, []);
 
   return (
     <div
@@ -23,31 +37,29 @@ export default function HoverPreviewWrapper({ previewImage, children }: HoverPre
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
       onMouseMove={handleMouseMove}
-      style={{ cursor: "none" }} // hide default cursor
+      style={{ cursor: "none" }}
     >
       {children}
 
       {hovered && (
         <>
-          {/* Hover preview image */}
           <img
             src={previewImage}
             alt="preview"
             className={styles.previewImage}
             style={{
-              left: `${cursorPos.x + 30}px`,
-              top: `${cursorPos.y + 40}px`,
+              left: `${renderPos.x + 30}px`,
+              top: `${renderPos.y + 40}px`,
             }}
           />
 
-          {/* Custom cursor image */}
           <img
             src="/cursor.png"
             alt="custom cursor"
             className={styles.customCursor}
             style={{
-              left: `${cursorPos.x}px`,
-              top: `${cursorPos.y}px`,
+              left: `${renderPos.x}px`,
+              top: `${renderPos.y}px`,
             }}
           />
         </>
