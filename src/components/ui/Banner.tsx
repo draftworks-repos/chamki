@@ -5,17 +5,17 @@ export default function Banner() {
   const [isOpen, setIsOpen] = useState(true);
 
   useEffect(() => {
-    if (!isOpen) return; // don't listen if already closed
-
     const handleScroll = () => {
-      setIsOpen(false); // collapse once
+      if (window.scrollY === 0) {
+        setIsOpen(true); // show again when scrolled to top
+      } else {
+        setIsOpen(false); // hide when scrolling down
+      }
     };
 
-    window.addEventListener("scroll", handleScroll, { once: true }); 
-    // "once: true" makes it auto-remove after first trigger
-
+    window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
-  }, [isOpen]);
+  }, []);
 
   return (
     <Transition

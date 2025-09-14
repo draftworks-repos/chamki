@@ -4,7 +4,7 @@ import { FaXTwitter } from "react-icons/fa6";
 export default function Footer() {
   return (
     <footer className="bg-white border-t border-gray-200 mt-10">
-      <div className="max-w-7xl mx-auto px-6 py-12 grid grid-cols-1 md:grid-cols-3 gap-10 text-center">
+      <div className="max-w-7xl mx-auto px-6 py-16  grid grid-cols-1 md:grid-cols-3 gap-10 text-center">
         
         {/* 1st Column: Contact */}
         <div>
@@ -84,7 +84,7 @@ export default function Footer() {
       </div>
 
       {/* Bottom Row */}
-      <div className="border-t border-gray-200 mt-8">
+      <div className="border-t border-gray-200 ">
         <div className="max-w-7xl mx-auto px-6 py-6 flex flex-col items-center space-y-3 text-center">
           <p className="text-sm text-gray-500 flex gap-1">
             © {new Date().getFullYear()} Chamki. All Rights Reserved. •
