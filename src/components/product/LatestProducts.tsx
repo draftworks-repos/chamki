@@ -3,7 +3,7 @@
 import { useState } from "react";
 import styles from "./LatestProducts.module.css";
 import { InteractiveHoverButton } from "../ui/InterractiveHoverButton";
-import HoverPreviewWrapper from "../ui/HoverPreviewWrapper";
+// import HoverPreviewWrapper from "../ui/HoverPreviewWrapper";
 import { ArrowRight } from "lucide-react";
 import Link from "next/link";
 
@@ -61,7 +61,7 @@ function ProductCard({ product }: { product: (typeof products)[0] }) {
     <div className={styles.card}>
       {/* Make the image clickable */}
       <Link href={`/product/${product.id}`} className={styles.imageLink}>
-        <HoverPreviewWrapper previewImage={product.image}>
+        {/* <HoverPreviewWrapper previewImage={product.image}> */}
           <div
             className={styles.imageWrapper}
             onMouseEnter={() => setHovered(true)}
@@ -78,7 +78,7 @@ function ProductCard({ product }: { product: (typeof products)[0] }) {
               className={`${styles.image} ${hovered ? styles.fadeIn : styles.fadeOut}`}
             />
           </div>
-        </HoverPreviewWrapper>
+        {/* </HoverPreviewWrapper> */}
       </Link>
 
       {/* Info stays outside */}
