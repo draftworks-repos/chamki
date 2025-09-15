@@ -58,11 +58,11 @@ export default function CartSidebar({ sidebarIsOpen, setSidebarIsOpen }: CartSid
   const total = subtotal + tax;
 
   return (
-    <div className="relative z-50">
+    <div className="relative z-1000">
       {/* Toggle Button */}
       <button
         onClick={() => setSidebarIsOpen(!sidebarIsOpen)}
-        className="fixed bottom-4 right-4 z-50 rounded-full bg-black p-4 text-white focus:outline-2 focus:outline-offset-2 focus:outline-black"
+        className=" hidden fixed bottom-4 right-4 z-50 rounded-full bg-black p-4 text-white focus:outline-2 focus:outline-offset-2 focus:outline-black"
       >
         <span className="sr-only">Toggle Cart Sidebar</span>
         Cart
@@ -79,10 +79,11 @@ export default function CartSidebar({ sidebarIsOpen, setSidebarIsOpen }: CartSid
           <h3 className="text-lg font-medium text-neutral-900">Your Cart</h3>
           <button
             onClick={() => setSidebarIsOpen(false)}
-            className="text-neutral-600 cursor-pointer"
+            className="text-neutral-500 cursor-pointer"
           >
             <span className="sr-only">Close Sidebar</span>
-            ✕
+            <span className="text-xl mb-4">➜</span>
+            {/* ✕ */}
           </button>
         </div>
 
@@ -133,8 +134,8 @@ export default function CartSidebar({ sidebarIsOpen, setSidebarIsOpen }: CartSid
               </div>
 
               {/* Product close icon (dummy) */}
-              <button className="absolute top-0 right-0 text-neutral-400 cursor-pointer">
-                ✕
+              <button className=" absolute top-0 right-0 text-neutral-400 cursor-pointer">
+                ×
               </button>
             </div>
           ))}

@@ -1,21 +1,35 @@
+"use client";
+
 import { useState, useEffect } from "react";
+import { usePathname } from "next/navigation";
 import { Transition } from "@headlessui/react";
 
 export default function Banner() {
+  const pathname = usePathname();
+
+  // ✅ Always call hooks at the top level
   const [isOpen, setIsOpen] = useState(true);
+
+  const hiddenPaths = ["/contact", "/about", "/product", "/shop", "/collection"];
+  const shouldHide = hiddenPaths.some(path => pathname.startsWith(path));
 
   useEffect(() => {
     const handleScroll = () => {
       if (window.scrollY === 0) {
-        setIsOpen(true); // show again when scrolled to top
+        setIsOpen(true);
       } else {
-        setIsOpen(false); // hide when scrolling down
+        setIsOpen(false);
       }
     };
 
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
+
+  // ✅ Just skip rendering the banner content, not the entire component
+  if (shouldHide) {
+    return <></>; // or return null;
+  }
 
   return (
     <Transition
@@ -55,7 +69,6 @@ export default function Banner() {
               </a>
             </p>
           </div>
-          {/* Close button */}
           <button
             onClick={() => setIsOpen(false)}
             className="p-1.5 rounded-md duration-150 hover:bg-neutral-500 ring-offset-1"

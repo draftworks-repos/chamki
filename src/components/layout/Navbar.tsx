@@ -21,7 +21,7 @@ export default function Navbar({ setSidebarIsOpen }: NavbarProps) {
   }, []);
 
   // Pages that should always have white navbar
-  const alwaysWhitePages = ["/contact", "/about", "/collection", "/shop"];
+  const alwaysWhitePages = ["/contact", "/about", "/product", "/shop"];
   const forceWhite = alwaysWhitePages.includes(pathname);
 
   return (
