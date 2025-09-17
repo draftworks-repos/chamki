@@ -18,7 +18,7 @@ const ContactPage = () => {
           <div className="text-center max-w-3xl mb-20">
             <span className="text-white text-sm font-semibold uppercase tracking-widest block mb-2">Contact Us</span>
             <h1 className="text-5xl md:text-7xl font-semibold text-white leading-tight">
-              Questions, feedback, or ideas? We’re listening.
+              Questions, feedback, or ideas? We&rsquo;re listening.
             </h1>
             <p className="mt-6 text-white text-lg md:text-xl opacity-90">
               Feel free to drop a message and we will get back to you within 24 hours.
@@ -45,10 +45,10 @@ const ContactPage = () => {
       <div className="max-w-5xl mx-auto my-20 px-6 text-center">
         <span className="text-pink-primary text-sm font-semibold uppercase tracking-widest block mb-4">Get in Touch</span>
         <h2 className="text-4xl md:text-5xl font-semibold text-gray-900 leading-tight">
-          Let’s Connect and Start the Conversation
+          Let&rsquo;s Connect and Start the Conversation
         </h2>
         <p className="mt-6 text-gray-700 text-lg">
-          Whether it’s for careers, product queries, or collaborations — we’re always happy to hear from you.
+          Whether it&rsquo;s for careers, product queries, or collaborations — we&rsquo;re always happy to hear from you.
         </p>
         <div className="mt-10 space-y-6 text-lg text-gray-800">
           <p><strong>careers@chamki.com</strong> for career enquiries.</p>

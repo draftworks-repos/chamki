@@ -24,7 +24,7 @@ const AboutUsSlick = () => {
               Fashion Without Fuss, Just You
             </h1>
             <p className="mt-6 text-white text-lg md:text-xl opacity-90">
-              We handpick 6 essential styles each season so you can stop scrolling and start wearing what's next.
+              We handpick 6 essential styles each season so you can stop scrolling and start wearing what&apos;s next.
             </p>
             <a 
               href="#"
@@ -95,7 +95,7 @@ const AboutUsSlick = () => {
             Style is a Statement, Not a Collection.
           </h2>
           <p className="mt-6 text-gray-700 text-lg">
-            We believe that true style comes from intentional choices. That's why we focus on perfecting a select few pieces, ensuring each item is versatile, high-quality, and designed to seamlessly integrate into your personal wardrobe.
+            We believe that true style comes from intentional choices. That&apos;s why we focus on perfecting a select few pieces, ensuring each item is versatile, high-quality, and designed to seamlessly integrate into your personal wardrobe.
           </p>
           <div className="mt-8 flex items-center gap-4">
             <span className="text-pink-primary text-3xl font-bold">6</span>
@@ -123,7 +123,7 @@ const AboutUsSlick = () => {
       {/* Call to Action / Testimonial Section */}
       <div className="bg-pink-light p-10 md:p-16 text-center ">
         <p className="text-3xl md:text-4xl font-semibold text-gray-900 leading-tight max-w-4xl mx-auto">
-          "You don't need a million options. You just need the right one."
+          &quot;You don&apos;t need a million options. You just need the right one.&quot;
         </p>
         <p className="mt-8 text-xl text-gray-700">— Our Chamki Team</p>
         <InteractiveHoverButton className="mt-12">

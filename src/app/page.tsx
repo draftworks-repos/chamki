@@ -5,7 +5,6 @@ import LatestProducts from "@/components/product/LatestProducts";
 import Banner from "@/components/sections/Banner";
 import ProductShowcase from "@/components/product/ProductShowcase";
 import CategoriesGrid from "@/components/sections/CategoriesGrid";
-import { HoverImageLinks } from "@/components/ui/HoverImageLinks";
 import Newsletter from "@/components/sections/Newsteller";
 
 export default function HomePage() {
