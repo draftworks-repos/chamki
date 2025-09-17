@@ -1,0 +1,37 @@
+.marqueeContainer {
+  position: relative;
+  width: 100vw;
+  max-width: 100%;
+  height: 60px;  
+  overflow-x: hidden;
+  display: flex;
+  align-items: center;
+  background-color: #cc007e;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  pointer-events: none;
+}
+
+.marqueeTrack {
+  position: absolute;
+  white-space: nowrap;
+  will-change: transform;
+  animation: marqueeScroll 38s linear infinite;
+}
+
+.marqueeContent {
+  display: inline-block;
+  padding-right: 2rem; 
+  font-size: 1.5rem;
+  font-weight: 400;
+  color: #fafec7;
+}
+
+@keyframes marqueeScroll {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}

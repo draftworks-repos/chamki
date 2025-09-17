@@ -1,5 +1,7 @@
 import { FaInstagram, FaFacebookF, FaPinterestP } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
+import Image from "next/image"
+import  Link from "next/link"
 
 export default function Footer() {
   return (
@@ -38,7 +40,17 @@ export default function Footer() {
 
         {/* 2nd Column: Logo + Socials */}
         <div className="flex flex-col items-center">
-          <h2 className="text-3xl font-bold tracking-wide mb-7">Chamki</h2>
+          {/* <h2 className="text-3xl font-bold tracking-wide mb-7">Chamki</h2> */}
+          <Link href="/">
+            <Image
+              src="/logo.png"
+              alt="Chamki Logo"
+              width={120}
+              height={40}
+              style={{marginBottom: "30px", borderRadius: "1rem"}}
+              priority
+            />
+          </Link>
           <div className="flex space-x-5 mb-8">
             <a
               href="#"

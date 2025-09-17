@@ -34,6 +34,10 @@
   letter-spacing: 2px;
 }
 
+.logoImage{
+  border-radius: 1rem;
+}
+
 .navLinks {
   display: flex;
   gap: 2rem;

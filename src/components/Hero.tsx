@@ -2,9 +2,9 @@ import styles from "./Hero.module.css";
 
 export default function Hero() {
   const slides = [
-    { img: "/image-7.png", title: "New Arrivals", link: "Shop Now" },
-    { img: "/image-12.png", title: "Premium Collection", link: "Explore" },
-    { img: "/image-4.png", title: "Chamki Styles", link: "Discover" },
+    { img: "/image-7.jpeg", title: "New Arrivals", link: "Shop Now" },
+    { img: "/image-11.jpeg", title: "Premium Collection", link: "Explore" },
+    { img: "/image-4.jpeg", title: "Chamki Styles", link: "Discover" },
   ];
 
   return (

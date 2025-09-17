@@ -1,0 +1,42 @@
+ ┌──────────────┐
+ │  Product Pg  │
+ └──────┬───────┘
+        │  (Add to Cart clicked)
+        ▼
+ ┌──────────────────────┐
+ │  Update Local State  │  ← instant UI update
+ │  (React state + LS)  │
+ └─────────┬────────────┘
+           │
+           ▼
+ ┌──────────────────────┐
+ │  Call Shopify API    │  ← async sync in background
+ │  (Add to cart item)  │
+ └─────────┬────────────┘
+           │
+           ▼
+ ┌──────────────────────┐
+ │  Shopify Cart DB     │
+ │ (Persistent server)  │
+ └─────────┬────────────┘
+           │
+     ┌─────▼───────┐
+     │   User      │
+     │ opens Cart  │
+     └─────┬───────┘
+           ▼
+ ┌──────────────────────┐
+ │ Show Loader in Cart  │
+ │ Sidebar              │
+ └─────────┬────────────┘
+           │ (fetch latest)
+           ▼
+ ┌──────────────────────┐
+ │ Fetch from Shopify   │
+ │ (cart API)           │
+ └─────────┬────────────┘
+           │
+           ▼
+ ┌──────────────────────┐
+ │ Merge + Render Cart  │  ← accurate + synced
+ └──────────────────────┘

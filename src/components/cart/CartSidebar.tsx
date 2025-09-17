@@ -24,7 +24,7 @@ export default function CartSidebar({ sidebarIsOpen, setSidebarIsOpen }: CartSid
       name: "Kurti",
       color: "Red",
       price: 1699,
-      img: "/image-5.png",
+      img: "/image-5.jpg",
       link: "/products/kurti",
     },
     {
@@ -32,7 +32,7 @@ export default function CartSidebar({ sidebarIsOpen, setSidebarIsOpen }: CartSid
       name: "Sleeveless Kurti",
       color: "Blue",
       price: 1299,
-      img: "/image-6.png",
+      img: "/image-8.jpg",
       link: "/products/sleeveless-kurti",
     },
   ]);
@@ -70,12 +70,12 @@ export default function CartSidebar({ sidebarIsOpen, setSidebarIsOpen }: CartSid
 
       {/* Sidebar */}
       <div
-        className={`fixed top-0 right-0 z-40 flex h-screen w-80 flex-col border-l border-neutral-300 bg-neutral-50 p-4 transition-transform duration-300 ${
+        className={`fixed top-0 right-0 z-40 flex h-screen w-80 flex-col border-l border-neutral-300 bg-neutral-50 transition-transform duration-300 ${
           sidebarIsOpen ? "translate-x-0" : "translate-x-full"
         }`}
       >
         {/* Header */}
-        <div className="flex items-center justify-between">
+        <div className="flex items-center justify-between p-4">
           <h3 className="text-lg font-medium text-neutral-900">Your Cart</h3>
           <button
             onClick={() => setSidebarIsOpen(false)}
@@ -88,7 +88,7 @@ export default function CartSidebar({ sidebarIsOpen, setSidebarIsOpen }: CartSid
         </div>
 
         {/* Products */}
-        <div className="flex flex-col gap-4 overflow-y-auto py-4">
+        <div className="flex flex-col gap-4 overflow-y-auto p-4 ">
           {products.map((product) => (
             <div key={product.id} className="flex justify-between gap-4 py-2 relative">
               {/* Product Image */}
@@ -142,32 +142,32 @@ export default function CartSidebar({ sidebarIsOpen, setSidebarIsOpen }: CartSid
         </div>
 
         {/* Footer */}
-        <div className="mt-auto">
-          <div className="divide-y divide-neutral-300">
-            <div className="flex justify-between py-2 text-xs font-medium text-neutral-600">
-              <span>Subtotal</span>
-              <span>₹{subtotal}</span>
+          <div className="mt-auto border-t-2 border-neutral-300">
+            <div className="divide-y divide-neutral-300 p-4">
+              <div className="flex justify-between py-2 text-xs font-medium text-neutral-600">
+                <span>Subtotal</span>
+                <span>₹{subtotal}</span>
+              </div>
+              <div className="flex justify-between py-2 text-xs font-medium text-neutral-600">
+                <span>Tax</span>
+                <span>Included</span>
+              </div>
+              <div className="flex justify-between py-2 text-sm font-bold text-neutral-600">
+                <span>Total</span>
+                <span>₹{subtotal}</span>
+              </div>
             </div>
-            <div className="flex justify-between py-2 text-xs font-medium text-neutral-600">
-              <span>Tax</span>
-              <span>₹{tax}</span>
-            </div>
-            <div className="flex justify-between py-2 text-sm font-bold text-neutral-600">
-              <span>Total</span>
-              <span>₹{total}</span>
-            </div>
-          </div>
 
-          {/* Buttons */}
-          <div className="mt-2 flex flex-col gap-2">
-            <button className="cursor-pointer flex w-full items-center justify-center gap-2 rounded-full bg-black px-4 py-2 text-sm font-medium text-white border transition-colors duration-300 hover:bg-white hover:text-black hover:border-black">
-              Checkout
-            </button>
-            <button className="cursor-pointer flex w-full items-center justify-center gap-2 rounded-full bg-black px-4 py-2 text-sm font-medium text-white border transition-colors duration-300 hover:bg-white hover:text-black hover:border-black">
-              Pay
-            </button>
+            {/* Buttons */}
+            <div className="mt-2 mb-4 flex flex-col gap-2 px-4">
+              <button className="cursor-pointer flex w-full items-center justify-center gap-2 rounded-full bg-black px-4 py-2 text-sm font-medium text-white border transition-colors duration-300 hover:bg-white hover:text-black hover:border-black">
+                Checkout
+              </button>
+              <button className="cursor-pointer flex w-full items-center justify-center gap-2 rounded-full bg-black px-4 py-2 text-sm font-medium text-white border transition-colors duration-300 hover:bg-white hover:text-black hover:border-black">
+                View Cart
+              </button>
+            </div>
           </div>
-        </div>
       </div>
     </div>
   );
