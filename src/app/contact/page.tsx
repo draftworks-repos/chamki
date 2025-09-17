@@ -60,7 +60,7 @@ const ContactPage = () => {
       {/* CTA */}
       <div className="bg-pink-light p-10 md:p-12 text-center">
         <p className="text-3xl md:text-4xl font-semibold text-gray-900 leading-tight max-w-4xl mx-auto">
-          "Every great conversation starts with a simple hello."
+          &quot;Every great conversation starts with a simple hello.&quot;
         </p>
         <p className="mt-6 text-xl text-gray-700">— Chamki Team</p>
         <InteractiveHoverButton className="mt-8" asChild>
