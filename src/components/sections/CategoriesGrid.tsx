@@ -6,12 +6,12 @@ import styles from './CategoriesGrid.module.css';
 import Cursor1 from '@/components/ui/Cursor1';
 
 const categories = [
-  { id: 1, name: 'Kurti Collection', type: 'Kurti', image: '/image-3.png', href: '/product' },
-  { id: 2, name: 'Saree Collection', type: 'Saree', image: '/image-8.png', href: '/product' },
-  { id: 3, name: 'Lehenga Collection', type: 'Lehenga', image: '/image-5.png', href: '/product' },
-  { id: 4, name: 'Shirt Collection', type: 'Shirt', image: '/image-10.png', href: '/product' },
-  { id: 5, name: 'Jeans Collection', type: 'Jeans', image: '/image-7.png', href: '/product' },
-  { id: 6, name: 'Jacket Collection', type: 'Jacket', image: '/image-12.png', href: '/product' },
+  { id: 1, name: 'Kurti Collection', type: 'Kurti', image: '/image-3.jpg', href: '/product' },
+  { id: 2, name: 'Saree Collection', type: 'Saree', image: '/image-8.jpg', href: '/product' },
+  { id: 3, name: 'Lehenga Collection', type: 'Lehenga', image: '/image-5.jpg', href: '/product' },
+  { id: 4, name: 'Shirt Collection', type: 'Shirt', image: '/image-10.jpg', href: '/product' },
+  { id: 5, name: 'Jeans Collection', type: 'Jeans', image: '/image-7.jpeg', href: '/product' },
+  { id: 6, name: 'Jacket Collection', type: 'Jacket', image: '/image-12.jpg', href: '/product' },
 ];
 
 export default function CategoriesGrid() {
