@@ -126,24 +126,24 @@ export default function Banner({ message, link }: BannerProps) {
       leaveFrom="max-h-40"
       leaveTo="max-h-0"
     >
-      <div className="overflow-hidden bg-white text-[0.7rem]">
-        <div className="w-full mx-auto px-2 py-[0.2rem] flex items-start justify-between text-[#262626] sm:items-center md:px-8">
+      <div className="overflow-hidden bg-[#262626] text-[0.7rem]">
+        <div className="w-full mx-auto px-2 py-[0.2rem] flex items-start justify-between text-[#e7e7e7] sm:items-center md:px-8">
           <div className="flex-1 justify-center flex items-start gap-x-2 sm:items-center">
-            <div className="flex-none px-4 pb-[1px] rounded-full text-[#e7e7e7] bg-[#262626] flex items-center justify-center font-medium text-[0.6rem]">
+            <div className="flex-none px-4 pb-[1px] rounded-full text-[#262626] bg-[#e7e7e7] flex items-center justify-center font-medium text-[0.6rem]">
               News
             </div>
             <p className="font-medium p-2">
               {message || "We just launched a new version of our library!"}{" "}
               <a
                 href={link || "#"}
-                className="font-semibold underline-offset-2 hover:underline duration-150 hover:text-[#1c1c1c] inline-flex items-center ml-2"
+                className="font-semibold underline-offset-2 hover:underline duration-150 hover:text-[#e7e7e7] inline-flex items-center ml-2"
               >
                 Learn more
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   viewBox="0 0 20 20"
                   fill="currentColor"
-                  className="w-5 h-5"
+                  className="w-4 h-4"
                 >
                   <path
                     fillRule="evenodd"
