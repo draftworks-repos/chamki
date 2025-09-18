@@ -34,7 +34,7 @@ export default function Navbar({ setSidebarIsOpen }: NavbarProps) {
         {/* <div className={styles.logo}>CHAMKI</div> */}
         <Link href="/">
           <Image
-            src="/logo.png"
+            src="/logo.jpg"
             alt="Chamki Logo"
             width={120}
             height={40}

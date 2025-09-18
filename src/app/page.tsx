@@ -12,17 +12,16 @@ export default function HomePage() {
   return (
     <>
       <Hero/>
-      <div style={{margin: "0 auto"}}>
+      <div style={{maxWidth: "1400px", margin: "0 auto"}}>
         <LatestProductsWrapper/>
       </div>
       <Banner/>
-      <div style={{margin: "0 auto"}}>
+      <div style={{maxWidth: "1400px", margin: "0 auto"}}>
         {/* <HoverImageLinks/> */}
         <ProductShowcaseWrapper/>
         <CategoriesGrid/>
-        <Newsletter/>
-        <InstagramGrid/>
       </div>
+        <Newsletter/>
     </>
   );
 }

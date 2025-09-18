@@ -52,3 +52,47 @@
   object-fit: cover;
   display: block;
 }
+
+/* Tablet: 768px - 1024px */
+@media (max-width: 1024px) {
+  .heading {
+    font-size: 2.2rem; /* Slightly smaller for tablets */
+  }
+
+  .desc {
+    font-size: 1rem; /* Adjust description */
+    max-width: 90%; /* Allow more breathing room */
+    margin-bottom: 2.5rem;
+  }
+
+  .backgroundText {
+    font-size: 12rem; /* Scale watermark */
+    top: 45%;
+  }
+
+  .imageWrapper {
+    height: 50vh; /* Reduce height on tablets */
+  }
+}
+
+/* Mobile: max-width 767px */
+@media (max-width: 767px) {
+  .heading {
+    font-size: 1.8rem; /* Smaller for mobile */
+  }
+
+  .desc {
+    font-size: 0.95rem;
+    max-width: 95%;
+    margin-bottom: 2rem;
+  }
+
+  .backgroundText {
+    font-size: 8rem; /* Make watermark smaller */
+    top: 50%;
+  }
+
+  .imageWrapper {
+    height: 40vh; /* Reduce height for mobile */
+  }
+}

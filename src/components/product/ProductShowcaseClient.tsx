@@ -351,7 +351,7 @@ const ProductShowcaseClient: React.FC<ProductShowcaseProps> = ({ products }) => 
           position: absolute;
           right: 30px;
           left: auto;
-          top: 100px;
+          top: 50px;
           width: auto;
           bottom: auto;
           z-index: 2;
@@ -384,6 +384,8 @@ const ProductShowcaseClient: React.FC<ProductShowcaseProps> = ({ products }) => 
           .center .bottle-bg { width: 220px; height: 340px; }
           .button-wrapper { padding: 0 20px; }
         }
+
+        
 
       `}</style>
        <div className="container">

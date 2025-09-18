@@ -95,3 +95,58 @@
 .icon:hover {
   transform: scale(1.1);
 }
+
+/* Tablet: 768px - 1024px */
+@media (max-width: 1024px) {
+  .navbar {
+    padding: 0.8rem 1.5rem;
+  }
+
+  .navLinks {
+    gap: 1.2rem;
+    flex-wrap: wrap; /* allow links to wrap */
+  }
+
+  .navLink {
+    font-size: 0.85rem;
+  }
+
+  .icons {
+    gap: 1rem;
+  }
+
+  .icon {
+    width: 20px;
+    height: 20px;
+  }
+}
+
+/* Mobile: max-width 767px */
+@media (max-width: 767px) {
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0.5rem 1rem;
+    gap: 0.5rem;
+  }
+
+  .navLinks {
+    flex-direction: column;
+    gap: 0.5rem;
+    width: 100%;
+  }
+
+  .navLink {
+    font-size: 0.8rem;
+  }
+
+  .icons {
+    gap: 0.5rem;
+    margin-top: 0.5rem;
+  }
+
+  .icon {
+    width: 18px;
+    height: 18px;
+  }
+}

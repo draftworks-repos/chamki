@@ -51,7 +51,7 @@ export default function CategoriesGrid() {
                 src={category.image}
                 alt={category.name}
                 fill
-                className="object-cover object-top transition-transform duration-700 group-hover:scale-105"
+                className="object-cover object-top transition-transform duration-3000 group-hover:scale-105"
               />
 
               <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent opacity-0 group-hover:opacity-25 transition-all duration-500 ease-in-out"></div>

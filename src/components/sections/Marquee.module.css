@@ -36,3 +36,25 @@
     transform: translateX(-50%);
   }
 }
+
+/* Tablet: 768px - 1024px */
+@media (max-width: 1024px) {
+  .marqueeContainer {
+    height: 40px; /* slightly smaller */
+  }
+  .marqueeContent {
+    font-size: 0.9rem; /* slightly smaller text */
+    padding-right: 1.5rem;
+  }
+}
+
+/* Mobile: max-width 767px */
+@media (max-width: 767px) {
+  .marqueeContainer {
+    height: 35px; /* reduce height further */
+  }
+  .marqueeContent {
+    font-size: 0.8rem; /* smaller font for narrow screens */
+    padding-right: 1rem;
+  }
+}

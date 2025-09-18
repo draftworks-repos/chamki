@@ -5,11 +5,19 @@ import { Instagram } from "lucide-react";
 import React from "react";
 
 const InstagramStrip = () => {
-  const images = Array(8).fill("/image-14.jpg"); // replace with actual images
+  const images = [
+    "/image-14.jpg",
+    "/image-20.jpg",
+    "/image-14.jpg",
+    "/image-14.jpg",
+    "/image-19.jpg",
+    "/image-14.jpg",
+    "/image-14.jpg"
+  ]; // replace with actual images
   const instagramLink = "https://www.instagram.com/yourclient/";
 
   return (
-    <div className="w-full overflow-hidden py-6">
+    <div className="w-full overflow-hidden">
       <div className="grid grid-flow-col auto-cols-fr gap-0">
         {images.map((img, idx) => (
           <a
