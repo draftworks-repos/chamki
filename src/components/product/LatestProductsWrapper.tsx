@@ -35,8 +35,7 @@ export default  function LatestProductsWrapper() {
     const products = [
         { id: 1, title: "Classic Cotton Kurti", image: "/LatesImage-2.jpg", hoverImage: "/LatesImage-1.jpg", price: 1499, currency: "INR", category: "Kurtis" },
         { id: 2, title: "Elegant Silk Saree", image: "/LatesImage-6.jpg", hoverImage: "/LatesImage-5.jpg", price: 5999, currency: "INR", category: "Sarees" },
-        { id: 3, title: "Trendy Denim Jacket", image: "/LatesImage-4.jpg", hoverImage: "/LatesImage-3.jpg", price: 2999, currency: "INR", category: "Jackets" },
-        { id: 4, title: "Classic Cotton Kurti", image: "/LatesImage-2.jpg", hoverImage: "/LatesImage-1.jpg", price: 1499, currency: "INR", category: "Kurtis" }]
+        { id: 3, title: "Trendy Denim Jacket", image: "/LatesImage-4.jpg", hoverImage: "/LatesImage-3.jpg", price: 2999, currency: "INR", category: "Jackets" }]
 
   return <LatestProducts products={products} />;
 }
