@@ -75,82 +75,30 @@
 //   );
 // }
 
-import React, { useState } from 'react';
+"use client";
 
-const products = [
-  {
-    id: 'kurti-sleeveless',
-    header: 'Women Clothing',
-    title: 'Sleeveless Kurti',
-    subtitle: '₹ 1,299',
-    contentTitle: 'Lightweight cotton kurti with sleeveless design.',
-    contentSubtitle: 'Ideal for summer wear, with subtle embroidery on the neckline.',
-    bottleBg: '/image-10.jpg',
-    bottleImg: '#'
-  },
-  {
-    id: 'kurti-anarkali',
-    header: 'Women Clothing',
-    title: 'Anarkali Kurti',
-    subtitle: '₹ 1,899',
-    contentTitle: 'Flared Anarkali style kurti in rayon fabric.',
-    contentSubtitle: 'Perfect for festive occasions with rich printed patterns.',
-    bottleBg: '/image-9.jpg',
-    bottleImg: '#'
-  },
-  {
-    id: 'saree-silk',
-    header: 'Women Clothing',
-    title: 'Silk Saree',
-    subtitle: '₹ 2,999',
-    contentTitle: 'Traditional pure silk saree with zari border.',
-    contentSubtitle: 'Elegant drape suitable for weddings and special occasions.',
-    bottleBg: '/image-10.jpg',
-    bottleImg: '#'
-  },
-  {
-    id: 'shirt-formal',
-    header: 'Men Clothing',
-    title: 'Formal Shirt',
-    subtitle: '₹ 1,499',
-    contentTitle: 'Slim-fit cotton formal shirt.',
-    contentSubtitle: 'Available in pastel shades, ideal for office & meetings.',
-    bottleBg: '/image-8.jpg',
-    bottleImg: '#'
-  },
-  {
-    id: 'jeans-slimfit',
-    header: 'Men Clothing',
-    title: 'Slim Fit Jeans',
-    subtitle: '₹ 2,199',
-    contentTitle: 'Stretchable denim jeans with a modern slim fit.',
-    contentSubtitle: 'Comfortable for daily wear with durable stitching.',
-    bottleBg: '/image-12.jpg',
-    bottleImg: '#'
-  },
-  {
-    id: 'hoodie-oversized',
-    header: 'Unisex Clothing',
-    title: 'Oversized Hoodie',
-    subtitle: '₹ 1,799',
-    contentTitle: 'Casual fleece-lined oversized hoodie.',
-    contentSubtitle: 'Trendy unisex design, cozy for winters.',
-    bottleBg: '/image-5.jpg',
-    bottleImg: '#'
-  },
-];
+import React, { useState } from "react";
 
+export interface Product {
+  id: string;
+  header: string;
+  title: string;
+  subtitle: string;
+  contentTitle: string;
+  contentSubtitle: string;
+  bottleBg: string;
+  bottleImg: string;
+}
 
-const ProductShowcase = () => {
+interface ProductShowcaseProps {
+  products: Product[];
+}
+
+const ProductShowcaseClient: React.FC<ProductShowcaseProps> = ({ products }) => {
   const [currentSlideIndex, setCurrentSlideIndex] = useState(0);
 
-  const handleNext = () => {
-    setCurrentSlideIndex((prevIndex) => (prevIndex + 1) % products.length);
-  };
-
-  const handlePrev = () => {
-    setCurrentSlideIndex((prevIndex) => (prevIndex - 1 + products.length) % products.length);
-  };
+  const handleNext = () => setCurrentSlideIndex((prev) => (prev + 1) % products.length);
+  const handlePrev = () => setCurrentSlideIndex((prev) => (prev - 1 + products.length) % products.length);
 
   return (
     <div className="body" data-sld={currentSlideIndex}>
@@ -236,6 +184,7 @@ const ProductShowcase = () => {
         }
 
         .main-header {
+          color: #cc007e;
           text-transform: uppercase;
           font-size: 14px;
           letter-spacing: 4px;
@@ -252,6 +201,7 @@ const ProductShowcase = () => {
         }
 
         .main-subtitle {
+          color: #cc007e;
           font-weight: 400;
           font-size: 32px;
           margin-top: 14px;
@@ -275,6 +225,7 @@ const ProductShowcase = () => {
         }
 
         .more-menu {
+          color: #cc007e;
           font-size: 13px;
           font-weight: 500;
           cursor: pointer;
@@ -435,7 +386,7 @@ const ProductShowcase = () => {
         }
 
       `}</style>
-      <div className="container">
+       <div className="container">
         <div className="mySwiper">
           <div className="main-wrapper swiper-wrapper">
             {products.map((product, index) => (
@@ -476,12 +427,12 @@ const ProductShowcase = () => {
         </div>
         <div className="button-wrapper">
           <div className="swiper-button swiper-prev-button" onClick={handlePrev}>
-            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
             </svg>
           </div>
           <div className="swiper-button swiper-next-button" onClick={handleNext}>
-            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
             </svg>
           </div>
@@ -496,4 +447,4 @@ const ProductShowcase = () => {
   );
 };
 
-export default ProductShowcase;
+export default ProductShowcaseClient;

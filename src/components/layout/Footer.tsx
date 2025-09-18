@@ -5,7 +5,7 @@ import  Link from "next/link"
 
 export default function Footer() {
   return (
-    <footer className="bg-white border-t border-gray-200 mt-10">
+    <footer className="border-t border-gray-200 bg-[#f7f4f1]">
       <div className="max-w-7xl mx-auto px-6 py-16  grid grid-cols-1 md:grid-cols-3 gap-10 text-center">
         
         {/* 1st Column: Contact */}

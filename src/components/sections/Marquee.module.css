@@ -2,7 +2,7 @@
   position: relative;
   width: 100vw;
   max-width: 100%;
-  height: 60px;  
+  height: 50px;  
   overflow-x: hidden;
   display: flex;
   align-items: center;
@@ -20,9 +20,10 @@
 }
 
 .marqueeContent {
+  text-transform: uppercase;
   display: inline-block;
   padding-right: 2rem; 
-  font-size: 1.5rem;
+  font-size: 1rem;
   font-weight: 400;
   color: #fafec7;
 }

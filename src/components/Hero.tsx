@@ -1,4 +1,5 @@
 import styles from "./Hero.module.css";
+import { ArrowUpRight } from "lucide-react";
 
 export default function Hero() {
   const slides = [
@@ -18,12 +19,9 @@ export default function Hero() {
           <div className={styles.content}>
             <h2>{slide.title}</h2>
             <a href="#" className={styles.button}>
-              <span className={styles.text}>{slide.link}
-              <img
-                src="/arrow-up-right.svg"
-                alt="Arrow up right"
-                className={styles.arrow}
-              />
+              <span className={styles.text}>
+                {slide.link}
+                <ArrowUpRight className={styles.arrow} size={16} />
               </span>
             </a>
           </div>

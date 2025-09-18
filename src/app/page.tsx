@@ -1,25 +1,27 @@
 "use client";
 
 import Hero from "@/components/Hero";
-import LatestProducts from "@/components/product/LatestProducts";
+import LatestProductsWrapper from "@/components/product/LatestProductsWrapper";
 import Banner from "@/components/sections/Banner";
-import ProductShowcase from "@/components/product/ProductShowcase";
+import ProductShowcaseWrapper from "@/components/product/ProductShowcaseWrapper";
 import CategoriesGrid from "@/components/sections/CategoriesGrid";
 import Newsletter from "@/components/sections/Newsteller";
+import InstagramGrid from "@/components/sections/InstagramGrid";
 
 export default function HomePage() {
   return (
     <>
       <Hero/>
-      <div style={{maxWidth: "1440px", margin: "0 auto"}}>
-        <LatestProducts/>
+      <div style={{margin: "0 auto"}}>
+        <LatestProductsWrapper/>
       </div>
       <Banner/>
-      <div style={{maxWidth: "1440px", margin: "0 auto"}}>
+      <div style={{margin: "0 auto"}}>
         {/* <HoverImageLinks/> */}
-        <ProductShowcase/>
+        <ProductShowcaseWrapper/>
         <CategoriesGrid/>
         <Newsletter/>
+        <InstagramGrid/>
       </div>
     </>
   );

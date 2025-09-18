@@ -5,22 +5,33 @@
 
 .heading {
   text-align: center;
-  font-size: 2rem;
+  font-size: 2.75rem; /* Large but still elegant */
   font-weight: 400;
-  letter-spacing: 0.05em;
+  letter-spacing: 0.06em; /* Slightly more spaced for modern look */
   color: #262626;
-  margin-bottom: 1.5rem;
+  margin-bottom: 1.5rem; /* Tighter spacing before desc */
   text-transform: uppercase;
+}
+
+.desc {
+  text-align: center;
+  max-width: 680px; /* Slightly wider for breathing room */
+  margin: 0 auto 3rem auto; /* Balanced spacing below */
+  font-size: 1.125rem; /* ~18px */
+  line-height: 1.75; /* A bit more relaxed */
+  color: #444; /* Slightly darker for better readability */
+  font-weight: 300; /* Light and elegant */
 }
 
 .grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 300px)); /* smaller cards */
-  gap: 3rem; /* space between cards */
-  justify-content: center; /* center grid if not filling row */
+  grid-template-columns: repeat(auto-fit, minmax(220px, 350px));
+  gap: 2rem;
+  justify-content: center;
 }
 
 .card {
+  position: relative; /* merged duplicate */
   overflow: hidden;
   background: #ffffff;
 }
@@ -28,10 +39,9 @@
 .imageWrapper {
   position: relative;
   width: 100%;
-  padding-top: 177%; /* 9:16 aspect ratio */
+  padding-top: 177%;
   overflow: hidden;
 }
-
 
 .image {
   position: absolute;
@@ -54,35 +64,57 @@
   z-index: 1;
 }
 
-
 .info {
   padding: 1rem;
   text-align: left;
+}
+
+.titleWrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .title {
   font-size: 1rem;
   font-weight: 600;
   color: #2c3e50;
-  margin-bottom: 0.3rem;
   cursor: pointer;
+}
+
+.category {
+  color: #4a5159cf;
+  font-size: 0.8rem;
 }
 
 .price {
   font-size: 0.9rem;
   font-weight: 600;
-  color: #4a5159a6;
+  color: #4a5159cf;
+  display: flex;
+  flex-direction: column;
+}
+
+.originalPrice {
+  text-decoration: line-through;
+  color: #939393;
+  margin-right: 0.4rem;
+  font-size: 0.75rem;
+}
+
+.discountedPrice {
+  display: flex;
 }
 
 .discount {
   display: inline-block;
   font-size: 0.75rem;
-  color: #c87c7cd3;
+  color: #cc007e98;
   margin-left: 0.4rem;
   border-radius: 1rem;
 }
 
-.bottomRow{
+.bottomRow {
   display: flex;
   justify-content: space-between;
   align-items: bottom;
@@ -92,8 +124,9 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 27px;
-  height: 27px;
+  width: 22px;
+  height: 22px;
+  margin-top: auto;
   border-radius: 50%;
   border: #4a5159a6 1px solid;
   cursor: pointer;
@@ -112,4 +145,62 @@
 
 .openBtnWrapper:hover {
   color: #222;
+}
+
+.actionButtons {
+  position: absolute; /* merged duplicate */
+  top: 0.75rem;
+  right: 0.75rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  opacity: 0;
+  transform: translateY(-10px);
+  transition: all 0.3s ease;
+  pointer-events: none;
+  z-index: 10;
+}
+
+.showButtons {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+.actionBtn {
+  display: flex;
+  align-items: center;
+  background: #fff;
+  border-radius: 99px;
+  box-shadow: 0 2px 20px rgba(0,0,0,0.05);
+  border: none;
+  cursor: pointer;
+  padding: 0.7rem;
+  width: 40px;
+  overflow: hidden;
+  white-space: nowrap;
+  transition: width 0.3s ease, padding 0.3s ease;
+}
+
+.actionBtn:hover {
+  width: 120px;
+  padding: 0.7rem 1rem;
+}
+
+.icon {
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
+}
+
+.btnText {
+  margin-left: 0.5rem;
+  font-size: 0.75rem;
+  color: #2c3e50;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+
+.actionBtn:hover .btnText {
+  opacity: 1;
 }

@@ -110,178 +110,238 @@ const SingleProduct = ({ product }: { product: Product }) => {
     }
   };
   return (
-    <div className="max-w-7xl mt-18 mb-12 mx-auto p-4 bg-white">
+    <div className="max-w-[1300px] mt-32 mb-12 mx-auto p-4 bg-white">
       {/* Breadcrumb */}
-      <div className="flex items-center text-sm text-gray-500 mb-6">
-        <Link href="/" className="hover:underline hover:text-gray-900">
-            Homepage
-        </Link>
-        <ChevronRight className="w-4 h-4 mx-2" />
-        <Link
-            href={`/category/${product.category.toLowerCase().replace(/\s+/g, "-")}`}
-            className="hover:underline hover:text-gray-900"
-        >
-            {product.category}
-        </Link>
-        <ChevronRight className="w-4 h-4 mx-2" />
-        <span className="text-gray-900">{product.name}</span>
-      </div>
+      <div className="flex items-center text-sm md:text-base text-gray-500 mb-6 space-x-1 md:space-x-2">
+      <Link 
+        href="/" 
+        className="hover:text-gray-900 transition-colors"
+      >
+        Homepage
+      </Link>
 
-      <div className="grid grid-cols-1 lg:grid-cols-[3fr_2fr] gap-14">
+      <ChevronRight className="w-4 h-4 text-gray-400" />
+
+      <Link
+        href={`/category/${product.category.toLowerCase().replace(/\s+/g, "-")}`}
+        className="hover:text-gray-900 transition-colors"
+      >
+        {product.category}
+      </Link>
+
+      <ChevronRight className="w-4 h-4 text-gray-400" />
+
+      <span className="text-gray-900 font-medium">{product.name}</span>
+    </div>
+
+
+      <div className="grid grid-cols-1 lg:grid-cols-[3fr_2fr] gap-8">
         {/* Image Section */}
-        <div className="space-y-4">
-          {/* Main Image */}
-          <div className="relative">
-            <img
-              src={product.images[selectedImageIndex]}
-              alt={product.name}
-              className="w-full h-96 lg:h-[700px] object-cover"
-            />
-
-            {/* Navigation Arrows */}
-            <button
-              onClick={prevImage}
-              className=" absolute left-4 top-1/2 transform -translate-y-1/2 bg-white/80 hover:bg-white rounded-full p-2 shadow-lg transition-colors"
-            >
-              <ChevronLeft className="w-5 h-5 cursor-pointer" />
-            </button>
-            <button
-              onClick={nextImage}
-              className="absolute right-4 top-1/2 transform -translate-y-1/2 bg-white/80 hover:bg-white rounded-full p-2 shadow-lg transition-colors"
-            >
-              <ChevronRight className="w-5 h-5 cursor-pointer" />
-            </button>
-
-            {/* Top Right Icons */}
-            <div className="absolute top-4 right-4 flex space-x-2">
-              <button
-                onClick={handleShare} // <- add this
-                className="bg-white/80 hover:bg-white rounded-full p-2 shadow-lg transition-colors"
-              >
-                <Share2 className="w-5 h-5 cursor-pointer" />
-              </button>
-
-            </div>
-          </div>
-
-          {/* Thumbnail Images */}
-          <div className="grid grid-cols-3 gap-3">
+        <div className="flex flex-col lg:flex-row lg:space-x-6">
+          {/* Thumbnails on the left (vertical) */}
+          <div className="hidden lg:flex flex-col space-y-3">
             {product.images.map((image: string, index: number) => (
               <button
                 key={index}
                 onClick={() => setSelectedImageIndex(index)}
-                className={`cursor-pointer w-full h-[300px] overflow-hidden border-2 transition-colors ${
-                  selectedImageIndex === index
+                className={`
+                  cursor-pointer w-24 h-24 overflow-hidden border-2 transition-colors 
+                  ${selectedImageIndex === index
                     ? "border-black"
                     : "border-gray-200 hover:border-gray-300"
-                }`}
+                  }
+                `}
               >
                 <img
                   src={image}
-                  alt={`Product view ${index + 1}`}
+                  alt={`Thumbnail ${index + 1}`}
                   className="w-full h-full object-cover"
                 />
               </button>
             ))}
           </div>
 
+          {/* Main Image + stacked images below */}
+          <div className="flex-1">
+            {/* Main Image */}
+            <div className="relative">
+              <img
+                src={product.images[selectedImageIndex]}
+                alt={product.name}
+                className="w-full h-96 lg:h-[700px] object-cover"
+              />
+
+              {/* Navigation Arrows */}
+              <button
+                onClick={prevImage}
+                className="absolute left-4 top-1/2 transform -translate-y-1/2 bg-white/80 hover:bg-white rounded-full p-2 shadow-lg transition-colors cursor-pointer"
+              >
+                <ChevronLeft className="w-5 h-5 " />
+              </button>
+              <button
+                onClick={nextImage}
+                className="absolute right-4 top-1/2 transform -translate-y-1/2 bg-white/80 hover:bg-white rounded-full p-2 shadow-lg transition-colors cursor-pointer"
+              >
+                <ChevronRight className="w-5 h-5 " />
+              </button>
+
+              {/* Top Right Icons */}
+              <div className="absolute top-4 right-4 flex space-x-2">
+                <button
+                  onClick={handleShare}
+                  className="bg-white/80 hover:bg-white rounded-full p-2 shadow-lg transition-colors"
+                >
+                  <Share2 className="w-5 h-5 cursor-pointer" />
+                </button>
+              </div>
+            </div>
+
+            {/* Stacked images below main image (not clickable) */}
+            <div className="flex flex-col mt-4 space-y-3">
+              {product.images.map((image: string, index: number) => (
+                <div
+                  key={`stacked-${index}`}
+                  className="w-full overflow-hidden border-2 border-gray-200 "
+                >
+                  <img
+                    src={image}
+                    alt={`Stacked ${index + 1}`}
+                    className="w-full h-96 lg:h-[700px] object-cover"
+                  />
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* For smaller screens, show clickable thumbnails below main image */}
+          <div className="flex lg:hidden mt-4 space-x-3">
+            {product.images.map((image: string, index: number) => (
+              <button
+                key={index}
+                onClick={() => setSelectedImageIndex(index)}
+                className={`
+                  cursor-pointer w-20 h-20 overflow-hidden border-2 transition-colors rounded-md
+                  ${selectedImageIndex === index
+                    ? "border-black"
+                    : "border-gray-200 hover:border-gray-300"
+                  }
+                `}
+              >
+                <img
+                  src={image}
+                  alt={`Thumbnail ${index + 1}`}
+                  className="w-full h-full object-cover"
+                />
+              </button>
+            ))}
+          </div>
         </div>
+
+
 
         {/* Product Details */}
         <div className="h-full">
           {/* Brand and Title */}
           <div className="h-fit space-y-6 sticky top-24">
-            <div>
-              <p className="text-sm uppercase text-gray-600 mb-1">{product.brand} <span className="capitalize">({product.category})</span></p>
-              <h1 className="text-2xl mt-4 uppercase lg:text-4xl font-medium text-gray-900">
-              {product.name}
-              </h1>
-            </div>
-
-            {/* Price and Rating */}
-            <div className="flex items-center justify-between">
-              <div className="flex items-center space-x-3">
-                <span className="text-lg uppercase text-gray-500 line-through">
-                  INR {Number(product.currentPrice) + 100}
-                </span>
-                <span className="text-2xl uppercase font-semibold text-gray-900">
-                  INR {product.currentPrice}
-                </span>
-              </div>
-            </div>
-
-            <div className="space-y-2">
-              {/* Description */}
-              <div className="hidden">
-                <h3 className="text-[1rem] uppercase font-medium text-gray-900 mb-2">Description:</h3>
-                <p className="text-sm text-gray-600 leading-relaxed">
-                  {showFullDescription ? product.description : truncatedDescription}
-                  {product.description.split(" ").length > wordLimit && (
-                    <span
-                      className="text-black ml-1 cursor-pointer"
-                      onClick={() => setShowFullDescription(!showFullDescription)}
-                    >
-                      {showFullDescription ? "See Less" : "See More..."}
-                    </span>
-                  )}
-                </p>
-              </div>
-              {/* Stock */}
+            <div className="space-y-4">
+              {/* Brand and Name */}
               <div>
-                <h3 className="text-[1rem] uppercase font-medium text-gray-900">
-                  Stock:{" "}
-                  {product.stockCount > 0 ? (
-                    <span className="font-normal">
-                      {product.stockCount}{" "}
-                      {product.stockCount < 10 && (
-                        <span className="text-yellow-600 ml-1 capitalize">(Low stock)</span>
-                      )}
-                    </span>
-                  ) : (
-                    <span className="text-red-600 font-normal capitalize">Out of stock</span>
-                  )}
-                </h3>
-              </div>            
+                <p className="text-sm uppercase text-gray-600 mb-1 tracking-wide">
+                  {product.brand} <span className="capitalize">({product.category})</span>
+                </p>
+                <h1 className="text-2xl lg:text-4xl font-medium uppercase text-gray-900 tracking-tight mt-2">
+                  {product.name}
+                </h1>
+              </div>
+
+              {/* Price */}
+              <div className="flex items-center justify-between mt-2">
+                <div className="flex items-center space-x-3">
+                  <span className="text-lg uppercase text-gray-500 line-through">
+                    INR {Number(product.currentPrice) + 100}
+                  </span>
+                  <span className="text-2xl md:text-3xl uppercase font-semibold text-gray-900">
+                    INR {product.currentPrice}
+                  </span>
+                </div>
+              </div>
+
+              <div className="space-y-4 mt-4">
+                {/* Description (hidden for now) */}
+                <div className="hidden">
+                  <h3 className="text-sm uppercase font-medium text-gray-900 mb-2 tracking-wide">
+                    Description:
+                  </h3>
+                  <p className="text-base text-gray-700 leading-relaxed">
+                    {showFullDescription ? product.description : truncatedDescription}
+                    {product.description.split(" ").length > wordLimit && (
+                      <span
+                        className="text-gray-900 ml-1 cursor-pointer font-medium hover:text-[#CC007E] transition-colors"
+                        onClick={() => setShowFullDescription(!showFullDescription)}
+                      >
+                        {showFullDescription ? "See Less" : "See More..."}
+                      </span>
+                    )}
+                  </p>
+                </div>
+
+                {/* Stock */}
+                <div>
+                  <h3 className="text-sm uppercase font-medium text-gray-900 tracking-wide">
+                    Stock:{" "}
+                    {product.stockCount > 0 ? (
+                      <span className="font-normal">
+                        {product.stockCount}{" "}
+                        {product.stockCount < 10 && (
+                          <span className="text-yellow-600 ml-1 capitalize">(Low stock)</span>
+                        )}
+                      </span>
+                    ) : (
+                      <span className="text-red-600 font-normal capitalize">Out of stock</span>
+                    )}
+                  </h3>
+                </div>
+              </div>
             </div>
-
-
-            
 
             {/* Color Selection */}
-            <div>
-              <h3 className="text-[1rem] uppercase font-medium text-gray-900 mb-4">
+            <div className="mt-6">
+              <h3 className="text-sm md:text-sm uppercase font-medium text-gray-900 mb-3 tracking-wide">
                 COLOUR: <span className="font-normal">{selectedColor}</span>
               </h3>
+
               <div className="flex space-x-3">
                 {product.colors.map((color: { name: string; value: string }, index: number) => (
                   <button
                     key={index}
                     onClick={() => setSelectedColor(color.name)}
+                    title={color.name}
                     className={`
-                      relative w-10 h-10 cursor-pointer rounded-3xl transition-colors
-                      border-1
-                      ${selectedColor === color.name ? "border-[#525252]" : "border-gray-200 hover:border-[#525252]"}
+                      relative w-10 h-10 cursor-pointer rounded-full transition-all
+                      border
+                      ${selectedColor === color.name 
+                        ? "border-gray-900" 
+                        : "border-gray-200 hover:border-gray-900"}
                     `}
                     style={{
                       backgroundColor: color.value,
-                      boxShadow: "inset 0 0 0 3px white", // inner border for double border effect
+                      boxShadow: "inset 0 0 0 2px white", // inner border for subtle separation
                     }}
-                    title={color.name}
                   />
-
-                  ))}
+                ))}
               </div>
             </div>
 
+
             {/* Size Selection */}
-            <div>
+            <div className="mt-6">
               <div className="flex items-center justify-between mb-3">
-                <h3 className="text-[1rem] uppercase font-medium text-gray-900">
+                <h3 className="text-sm md:text-base uppercase font-medium text-gray-900 tracking-wide">
                   Size: <span className="font-normal">{selectedSize}</span>
                 </h3>
 
                 {/* Check Guide button/link */}
-                <button className="text-[0.75rem] text-neutral-500 underline ml-auto hover:text-neutral-800 cursor-pointer">
+                <button className="text-xs md:text-sm text-gray-500 hover:text-gray-800 underline cursor-pointer transition-colors">
                   Check guide
                 </button>
               </div>
@@ -291,11 +351,13 @@ const SingleProduct = ({ product }: { product: Product }) => {
                   <button
                     key={size}
                     onClick={() => setSelectedSize(size)}
-                    className={`px-[1rem] py-[0.4rem] pb-[0.6rem] border rounded-full text-[0.9rem] font-medium transition-colors cursor-pointer ${
-                      selectedSize === size
-                        ? "border-[#716a6a] text-[#716a6a]"
-                        : "border-gray-300 text-[#716a6a] hover:border-gray-400"
-                    }`}
+                    className={`
+                      px-4 py-1 border rounded-full text-sm md:text-base font-medium transition-colors cursor-pointer
+                      ${selectedSize === size
+                        ? "border-gray-900 text-gray-900"
+                        : "border-gray-300 text-gray-700 hover:border-gray-400 hover:text-gray-900"
+                      }
+                    `}
                   >
                     {size}
                   </button>
@@ -303,16 +365,17 @@ const SingleProduct = ({ product }: { product: Product }) => {
               </div>
             </div>
 
-
             {/* Action Buttons */}
-            <div className="space-x-3 flex flex-row pt-4 text-[0.9rem]">
-              <button className="w-full bg-black text-white py-3  font-medium rounded-full cursor-pointer transition-colors duration-300 ease-in-out hover:bg-white hover:text-black border border-black">
+            <div className="flex flex-col sm:flex-row gap-3 pt-4 text-sm md:text-base">
+              <button className="flex-1 bg-black text-white py-3 font-medium rounded-full cursor-pointer border border-black transition-colors duration-300 ease-in-out hover:bg-white hover:text-black">
                 Add To Cart
               </button>
-              <button className="w-full bg-black text-white py-3 font-medium rounded-full cursor-pointer transition-colors duration-300 ease-in-out hover:bg-white hover:text-black border border-black">
+
+              <button className="flex-1 bg-black text-white py-3 font-medium rounded-full cursor-pointer border border-black transition-colors duration-300 ease-in-out hover:bg-white hover:text-black">
                 Checkout Now
               </button>
             </div>
+
 
 
             {/* Delivery Info */}
@@ -321,7 +384,7 @@ const SingleProduct = ({ product }: { product: Product }) => {
               <div className="relative flex bg-gray-100 rounded-full p-1 mb-4">
                 {/* Sliding Indicator */}
                 <span
-                  className="absolute top-0 left-0 h-full bg-black rounded-full shadow-md transition-all duration-300"
+                  className="absolute top-0 left-0 h-full bg-black rounded-full shadow transition-all duration-300 ease-in-out"
                   style={{ left: indicatorStyle.left, width: indicatorStyle.width }}
                 />
 
@@ -332,58 +395,49 @@ const SingleProduct = ({ product }: { product: Product }) => {
                       tabRefs.current[idx] = el;
                     }}
                     onClick={() => setActiveTab(tab)}
-                    className={`relative z-10 flex-1 text-center py-2 px-4 text-sm font-medium cursor-pointer transition-colors duration-300 ${
-                      activeTab === tab ? "text-white" : "text-gray-600"
-                    }`}
+                    className={`
+                      relative z-10 flex-1 text-center py-2 px-2 text-sm md:text-base font-medium cursor-pointer transition-colors duration-300 ease-in-out
+                      ${activeTab === tab ? "text-white" : "text-gray-600 hover:text-gray-900"}
+                    `}
                   >
                     {tab}
                   </button>
                 ))}
               </div>
 
+
               {/* Tab Content */}
-              <div className="bg-gray-100 rounded-xl p-4 shadow-inner text-gray-700 text-sm leading-relaxed">
+              <div className="bg-gray-50 rounded-xl p-6 md:p-8 text-gray-700 text-sm md:text-base leading-relaxed">
                 {activeTab === "Description" && (
-                  <p>
-                    This kurti is a perfect mix of comfort and elegance, designed to suit 
-                    everyday wear as well as festive gatherings. Crafted from soft, breathable 
-                    fabric, it drapes beautifully while offering lasting comfort. The versatile 
-                    design makes it easy to pair with leggings, palazzos, or jeans. Whether at 
-                    work, family events, or casual outings, this kurti adds a refined and 
-                    contemporary charm to your wardrobe essentials.
+                  <p className="text-gray-800">
+                    This kurti is a perfect blend of comfort and elegance, designed to suit both everyday wear and festive gatherings. Crafted from soft, breathable fabric, it drapes beautifully while offering lasting comfort. The versatile design allows easy pairing with leggings, palazzos, or jeans. Whether at work, family events, or casual outings, this kurti adds a refined and contemporary charm to your wardrobe essentials.
                   </p>
                 )}
 
                 {activeTab === "Details" && (
-                  <ul className="list-disc pl-5 space-y-1">
-                    <li><span className="font-medium">Fabric:</span> Premium Cotton Blend</li>
-                    <li><span className="font-medium">Pattern:</span> Subtle Hand-Block Print</li>
-                    <li><span className="font-medium">Neckline:</span> Round Neck with Keyhole</li>
-                    <li><span className="font-medium">Sleeves:</span> 3/4th Sleeves</li>
-                    <li><span className="font-medium">Length:</span> Knee Length</li>
-                    <li><span className="font-medium">Fit:</span> Regular Comfort Fit</li>
+                  <ul className="list-disc pl-6 space-y-2 text-gray-700">
+                    <li><span className="font-medium text-gray-900">Fabric:</span> Premium Cotton Blend</li>
+                    <li><span className="font-medium text-gray-900">Pattern:</span> Subtle Hand-Block Print</li>
+                    <li><span className="font-medium text-gray-900">Neckline:</span> Round Neck with Keyhole</li>
+                    <li><span className="font-medium text-gray-900">Sleeves:</span> 3/4th Sleeves</li>
+                    <li><span className="font-medium text-gray-900">Length:</span> Knee Length</li>
+                    <li><span className="font-medium text-gray-900">Fit:</span> Regular Comfort Fit</li>
                   </ul>
                 )}
 
                 {activeTab === "Delivery & Return" && (
-                  <div className="space-y-3">
+                  <div className="space-y-5 text-gray-700">
                     <div>
-                      <h4 className="font-medium text-gray-800">Delivery</h4>
-                      <p>
-                        Orders are shipped within <span className="font-semibold">6–7 business days</span> 
-                        across India. Any unexpected delay will be communicated via e-mail.  
-                        Free shipping is available on all domestic orders above 
-                        <span className="font-semibold"> 5000 INR</span>.
+                      <h4 className="font-semibold text-gray-900 mb-1">Delivery</h4>
+                      <p className="leading-relaxed">
+                        Orders are shipped within <span className="font-semibold">6–7 business days</span> across India. Any unexpected delay will be communicated via email. Free shipping is available on all domestic orders above <span className="font-semibold">5000 INR</span>.
                       </p>
                     </div>
 
                     <div>
-                      <h4 className="font-medium text-gray-800">Return Policy</h4>
-                      <p>
-                        Returns are accepted within <span className="font-semibold">7 days</span> of delivery, 
-                        provided the product is unused and in original packaging. Refunds are processed after 
-                        quality inspection. Please note: customized or sale items are not eligible for return.  
-                        For return requests, contact our customer support team.
+                      <h4 className="font-semibold text-gray-900 mb-1">Return Policy</h4>
+                      <p className="leading-relaxed">
+                        Returns are accepted within <span className="font-semibold">7 days</span> of delivery, provided the product is unused and in original packaging. Refunds are processed after quality inspection. Note: customized or sale items are not eligible for return. For return requests, please contact our customer support team.
                       </p>
                     </div>
                   </div>
@@ -391,8 +445,6 @@ const SingleProduct = ({ product }: { product: Product }) => {
               </div>
             </div>
           </div>
-
-
         </div>
       </div>
     </div>
@@ -417,12 +469,12 @@ const mockProduct = {
   ],
   sizes: ["XS", "S", "M", "L", "XL", "XXL"],
   images: [
-    "/image-5.png",
-    "/image-6.png",
-    "/image-7.png",
-    "/image-8.png",
-    "/image-9.png",
-    "/image-10.png",
+    "/image-5.jpg",
+    "/image-6.jpg",
+    "/image-7.jpeg",
+    "/image-8.jpg",
+    "/image-9.jpg",
+    "/image-10.jpg",
   ],
 };
 

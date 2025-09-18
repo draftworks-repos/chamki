@@ -22,11 +22,17 @@ export default function CategoriesGrid() {
 
   return (
     <div className="relative max-w-full mx-auto p-4">
-      <div className="mb-10">
-        <h2 className="text-center text-3xl md:text-4xl font-normal tracking-wider text-neutral-800 mb-6 uppercase">
-          Categories
+      <div className="mb-12">
+        <h2 className="text-center text-[2.75rem] font-normal tracking-[0.06em] text-neutral-800 mb-6 uppercase">
+          Ready to Explore?
         </h2>
+        <p className="text-center text-[1.125rem] leading-[1.75] font-light text-neutral-700 max-w-[680px] mx-auto mb-8">
+          Discover styles tailored to your vibe — from timeless classics to the latest 
+          trends, all in one place.
+        </p>
       </div>
+
+
 
       <Cursor1 targets={refs} />
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
@@ -39,7 +45,7 @@ export default function CategoriesGrid() {
             <Link
               href={category.href}
               target="_blank"
-              className="relative w-full h-64 sm:h-72 md:h-[25rem] block cursor-none"
+              className="relative w-full h-64 sm:h-72 md:h-[30rem] block cursor-none"
             >
               <Image
                 src={category.image}
@@ -50,11 +56,13 @@ export default function CategoriesGrid() {
 
               <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent opacity-0 group-hover:opacity-25 transition-all duration-500 ease-in-out"></div>
 
-              <div className="absolute bottom-4 left-1/2 -translate-x-1/2">
-                <span className={styles.button}>
-                  <span className={styles.text}>{category.name}</span>
+             <div className="absolute bottom-4 left-1/2 -translate-x-1/2">
+                <span className="text-white text-sm md:text-base font-medium tracking-wide uppercase drop-shadow-md">
+                  {category.name}
                 </span>
               </div>
+
+
             </Link>
           </div>
         ))}

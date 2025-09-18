@@ -36,8 +36,8 @@ const App = () => {
   };
 
   return (
-    <div className="flex items-center justify-center min-h-[50vh] bg-[#ffffff] ">
-      <div className="w-xl text-center">
+    <div className="flex items-center justify-center min-h-[40vh] mt-10 mb-10 bg-[#ffffff] ">
+      <div className="w-full flex flex-col text-center border-t-[1px] border-zinc-200 pt-18">
           <h1 className="text-3xl md:text-4xl font-normal tracking-wider text-neutral-800 mb-6 uppercase">
             Get an instant Discount!
           </h1>
@@ -46,7 +46,7 @@ const App = () => {
             <p>Planning a bulk or custom order? We’ve got special pricing just for you.</p>
             <p>Contact us directly to get the best offer on your purchase.</p>
           </div>
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mt-8">
+          <div className=" w-xl mx-auto flex flex-col sm:flex-row items-center justify-center gap-4 mt-8">
             <input
               type="email"
               value={email}
