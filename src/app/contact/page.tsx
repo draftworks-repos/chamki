@@ -19,7 +19,7 @@ const ContactPage = () => {
               Contact Us
             </span>
             <h1 className="text-5xl md:text-7xl font-light text-white leading-tight drop-shadow-lg">
-              Questions, feedback, or ideas? We’re listening.
+              Questions, feedback, or ideas? We&apos;re listening.
             </h1>
             <p className="mt-6 text-white text-lg md:text-xl opacity-90">
               Feel free to drop a message and we will get back to you within 24 hours.
@@ -46,11 +46,11 @@ const ContactPage = () => {
         </span>
 
         <h2 className="text-4xl md:text-5xl font-light tracking-tight text-gray-900 leading-snug mb-6">
-          Let’s Connect and Start the Conversation
+          Let&apos;s Connect and Start the Conversation
         </h2>
 
         <p className="mt-6 text-gray-700 text-lg md:text-xl max-w-3xl mx-auto leading-relaxed">
-          Whether it’s for careers, product queries, or collaborations — we’re always happy to hear from you.
+          Whether it&apos;s for careers, product queries, or collaborations — we&apos;re always happy to hear from you.
         </p>
 
         <div className="mt-12 text-lg md:text-xl text-gray-800 max-w-2xl mx-auto leading-relaxed">
@@ -78,7 +78,7 @@ const ContactPage = () => {
             >
               +91 98765 43210
             </a>
-            . If you’re interested in collaborations or partnership opportunities, contact us at{" "}
+            . If you&apos;re interested in collaborations or partnership opportunities, contact us at{" "}
             <a
               href="mailto:community@chamki.com"
               className="font-semibold text-gray-900 hover:text-[#CC007E] transition-colors"
@@ -95,7 +95,7 @@ const ContactPage = () => {
       {/* CTA Section */}
       <div className="w-full p-10 md:p-14 text-center border-t border-b border-gray-200">
         <p className="text-3xl md:text-4xl lg:text-5xl font-light tracking-wide text-gray-900 max-w-4xl mx-auto leading-snug">
-          "Every great conversation starts with a simple hello."
+          &quot;Every great conversation starts with a simple hello.&quot;
         </p>
         <p className="mt-6 text-xl text-gray-700">— Chamki Team</p>
         <InteractiveHoverButton className="mt-8" >
